@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('/Content/fonts/raleway/raleway-regular-webfont.eot');
+    src: url('/Content/fonts/raleway/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/raleway/raleway-regular-webfont.woff2') format('woff2'), url('/assets/fonts/raleway/raleway-regular-webfont.woff') format('woff'), url('/assets/fonts/raleway/raleway-regular-webfont.ttf') format('truetype'), url('/assets/fonts/raleway/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ralewaybold';
+    src: url('/Content/fonts/raleway/raleway-bold-webfont.eot');
+    src: url('/Content/fonts/ralew360ay/raleway-bold-webfont.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/raleway/raleway-bold-webfont.woff2') format('woff2'), url('/assets/fonts/raleway/raleway-bold-webfont.woff') format('woff'), url('/assets/fonts/raleway/raleway-bold-webfont.ttf') format('truetype'), url('/assets/fonts/raleway/raleway-bold-webfont.svg#ralewaybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 12px ralewayregular, Arial, Helvetica, sans-serif;
+}
+
+[class^="atf-"],
+[class*=" atf-"] {
+    font-family: 'artifi-font' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog .modal-content .modal-body .bootbox-body .art-msg span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.atf-warning:before {
+    content: "\e002";
+}
+
+.art-alert-icon {
+    color: #ffca00 !important;
+}
+
+.modal-dialog .modal-content .modal-body .bootbox-body .art-msg .art-alert-icon {
+    font-size: 4em;
+    color: #00aeef;
+    display: table-cell;
+}
+
+.modal-title {
+    color: #27b2eb;
+}
+
+.tab-content-area {
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    background: -moz-linear-gradient(left, rgba(240, 249, 255, 1) 0%, rgba(232, 232, 232, 1) 0%, rgba(237, 237, 237, 1) 11%, rgba(243, 243, 243, 1) 31%, rgba(243, 243, 243, 1) 62%, rgba(242, 242, 242, 1) 88%, rgba(232, 232, 232, 1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(240, 249, 255, 1)), color-stop(0%, rgba(232, 232, 232, 1)), color-stop(11%, rgba(237, 237, 237, 1)), color-stop(31%, rgba(243, 243, 243, 1)), color-stop(62%, rgba(243, 243, 243, 1)), color-stop(88%, rgba(242, 242, 242, 1)), color-stop(100%, rgba(232, 232, 232, 1)));
+    background: -webkit-linear-gradient(left, rgba(240, 249, 255, 1) 0%, rgba(232, 232, 232, 1) 0%, rgba(237, 237, 237, 1) 11%, rgba(243, 243, 243, 1) 31%, rgba(243, 243, 243, 1) 62%, rgba(242, 242, 242, 1) 88%, rgba(232, 232, 232, 1) 100%);
+    background: -o-linear-gradient(left, rgba(240, 249, 255, 1) 0%, rgba(232, 232, 232, 1) 0%, rgba(237, 237, 237, 1) 11%, rgba(243, 243, 243, 1) 31%, rgba(243, 243, 243, 1) 62%, rgba(242, 242, 242, 1) 88%, rgba(232, 232, 232, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(240, 249, 255, 1) 0%, rgba(232, 232, 232, 1) 0%, rgba(237, 237, 237, 1) 11%, rgba(243, 243, 243, 1) 31%, rgba(243, 243, 243, 1) 62%, rgba(242, 242, 242, 1) 88%, rgba(232, 232, 232, 1) 100%);
+    background: linear-gradient(to right, rgba(240, 249, 255, 1) 0%, rgba(232, 232, 232, 1) 0%, rgba(237, 237, 237, 1) 11%, rgba(243, 243, 243, 1) 31%, rgba(243, 243, 243, 1) 62%, rgba(242, 242, 242, 1) 88%, rgba(232, 232, 232, 1) 100%);
+    border-top: 4px solid #009edf;
+    box-shadow: 0 10px 10px -5px #929294;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 12px;
+    left: 0;
+    line-height: 140%;
+    text-align: left;
+    width: 100%;
+    z-index: 2;
+}
+
+.atf-checkmark:before {
+    content: "\ea10";
+}
+
+.atf-times-circle-o:before {
+    content: "\f05d";
+}
+
+.art-alert-icon {
+    color: #ffca00 !important;
+}
+
+.bootbox .modal-dialog .modal-content .modal-body .bootbox-body .art-msg .art-alert-icon {
+    font-size: 4em;
+    color: #00aeef;
+    display: table-cell;
+}

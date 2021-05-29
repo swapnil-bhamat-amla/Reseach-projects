@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'artifi-font';
+    src: url('/Content/fonts/artifi-fonts/artifi-font.eot?c5stpc');
+    src: url('/Content/fonts/artifi-fonts/artifi-font.eot?c5stpc#iefix') format('embedded-opentype'), url('/assets/fonts/artifi-fonts/artifi-font.ttf?c5stpc') format('truetype'), url('/assets/fonts/artifi-fonts/artifi-font.woff?c5stpc') format('woff'), url('/assets/fonts/artifi-fonts/artifi-font.svg?c5stpc#artifi-font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="atf-"],
+[class*=" atf-"] {
+    font-family: 'artifi-font' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.art-library-tab {
+    background: #e9e9e9 none repeat scroll 0 0;
+    border-bottom: 1px solid #d1d1d1;
+    border-top: 1px solid #d1d1d1;
+    height: 52px;
+    text-align: center;
+}
+
+.art-library-tab .nav-tabs {
+    border-bottom: medium none;
+    display: inline-block;
+    width: auto;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.art-library-tab .nav>li {
+    background: #e9e9e9 none repeat scroll 0 0;
+    float: left;
+    position: relative;
+    width: auto;
+}
+
+.art-library-tab .nav-tabs>li.active .arrow-up {
+    display: block;
+}
+
+.art-library-tab .nav-tabs>li .arrow-up {
+    border-bottom: 8px solid #C6C6C6;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    bottom: -2px;
+    display: none;
+    height: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 0;
+    z-index: 999;
+    display: none;
+}
+
+.art-library-tab .nav-tabs>li.active>a,
+.art-library-tab .nav-tabs>li.active>a:hover,
+.art-library-tab .nav-tabs>li.active>a:focus {
+    background-color: inherit;
+    text-decoration: none;
+    color: #00a5e6;
+    border: none;
+}
+
+.art-library-tab .nav-tabs>li>a {
+    display: block;
+    font-size: 14px;
+    line-height: 2;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.atf-clipart-icon:before {
+    content: "\e91b";
+}
+
+.atf-upload:before {
+    content: "\e9c6";
+}
+
+.atf-star:before {
+    content: "\e808";
+}
+
+.art-library-tab .nav-tabs>li:hover>a>i,
+.art-library-tab .nav-tabs>li.active>a>i {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.art-library-tab .nav-tabs>li a i {
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.art-library-tab .nav-tabs>li>a {
+    display: block;
+    font-size: 14px;
+    line-height: 2;
+    padding: 10px 15px;
+    text-align: center;
+    color: #6d6d75;
+}
+
+.art-library-tab .nav>li>a:hover,
+.art-library-tab .nav>li>a:focus {
+    background-color: #e9e9e9;
+    text-decoration: none;
+    color: #00a5e6;
+    border-color: transparent;
+}
+
+.art-library-tab .nav-tabs>li a i {
+    display: inline-block;
+    padding-right: 3px;
+    margin-right: 3px;
+}

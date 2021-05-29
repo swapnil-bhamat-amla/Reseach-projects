@@ -1,0 +1,31 @@
+<div class="art-lib-tabs">
+    <ul class="nav nav-tabs parent-tab nav-justified text-center">
+        <li [class]="activeComponent == 'computer' ? 'active in' : '' ">
+            <a href="javascript:void(0)" (click)="setComponent('computer')" data-test-selector="linkMyComputer" [title]="localizations.BTN_UPLOAD_COMPUTER">
+                <i class="tab-icon atf-device-desktop" data-toggle="tooltip" [title]="localizations.BTN_UPLOAD_COMPUTER"></i>
+            </a>
+        </li>
+        <li [class]="activeComponent == 'facebook' ? 'active in' : '' ">
+            <a href="javascript:void(0)" (click)="setComponent('facebook')" data-test-selector="linkFacebook" [title]="localizations.FACEBOOK">
+                <i class="tab-icon atf-facebook-official" data-toggle="tooltip" [title]="localizations.FACEBOOK"></i>
+            </a>
+        </li>
+        <li [class]="activeComponent == 'instagram' ? 'active in' : '' ">
+            <a href="javascript:void(0)" (click)="setComponent('instagram')" data-test-selector="linkInstagram" [title]="localizations.INSTAGRAM">
+                <i class="tab-icon atf-instagram" data-toggle="tooltip" [title]="localizations.INSTAGRAM"></i>
+            </a>
+        </li>
+        <li [class]="activeComponent == 'dropbox' ? 'active in' : '' ">
+            <a href="javascript:void(0)" (click)="setComponent('dropbox')" data-test-selector="linkDropbox" [title]="localizations.DROPBOX">
+                <i class="tab-icon atf-dropbox" data-toggle="tooltip" [title]="localizations.DROPBOX"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="art-lib-content tab-content">
+    <artifi-computer-upload (outputEvent)="outputEventHandler($event)" [localization]="localizations" [settings]="settings" *ngIf="activeComponent == 'computer'"></artifi-computer-upload>
+    <artifi-facebook-upload (outputEvent)="outputEventHandler($event)" [settings]="settings" *ngIf="activeComponent == 'facebook'"></artifi-facebook-upload>
+    <artifi-instagram-upload (outputEvent)="outputEventHandler($event)" [settings]="settings" *ngIf="activeComponent == 'instagram'"></artifi-instagram-upload>
+    <artifi-dropbox-upload (outputEvent)="outputEventHandler($event)" [settings]="settings" *ngIf="activeComponent == 'dropbox'"></artifi-dropbox-upload>
+</div>

@@ -1,0 +1,36 @@
+<button (click)="sample()">sample</button>
+
+<div class="backdrop" [ngStyle]="{'display':display}">
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" data-test-selector="headPopupTitle">Facebook Image</h4>
+            </div>
+            <div class="modal-body bootstrapMinWidth">
+                <div class="bootbox-body">
+
+                    <ul class="art-grid third-party-grid-list" data-art-selector="importedImagesList" data-art-uploader="singleUploader" data-social-network-name="facebook">
+
+                        <li *ngFor="let pic of imagesList" (click)="selectedPic = pic" class="col-xs-3 li-grid no-padding" [ngClass]="selectedPic.id == pic.id ? 'selected' : ''">
+                            <a href="javascript:void(0)" class="art-frame">
+                                <div class="art-img-box">
+                                    <img class="is_center" [src]="pic.picture">
+                                </div>
+                            </a>
+                            <div class="art-caption is_truncate" [title]="pic.id">{{ pic.id }}</div>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" title="Apply" class="btn btn-primary" (click)="btnApply()">Apply</button>
+                    <button type="button" title="Close" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

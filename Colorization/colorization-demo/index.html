@@ -1,0 +1,249 @@
+<html>
+  <head>
+    <title>Artifi Colorizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/bootstrap-colorpicker.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-colorpicker.js"></script>
+  </head>
+
+  <body>
+    <div class="col-md-12">
+      <div class="col-md-10 border-right">
+        <div class="col-md-12 padding-10">
+          <div id="t-shirt" data-prod-viewer="prod" style="display:block">
+            <div class="row">
+              <div class="col-md-6 g-item text-center border-right">
+                <div class="overlay text-center" id="loader">
+                  <div class="text-center">
+                    <img src="./img/loader.gif" />
+                  </div>
+                </div>
+                <h3>
+                  <span class="label label-success">New Output</span>
+                </h3>
+                <img
+                  src="./img/cap.png"
+                  class="prod-image padding-10"
+                  data-parent="t-shirt"
+                  id="shirtImg"
+                />
+              </div>
+              <div class="col-md-6 g-item text-center">
+                <div class="overlay text-center" id="loaderOld">
+                  <div class="text-center">
+                    <img src="./img/loader.gif" />
+                  </div>
+                </div>
+                <h3>
+                  <span class="label label-warning">Frank Output</span>
+                </h3>
+                <img
+                  src="./img/cap.png"
+                  class="prod-image-old padding-10"
+                  data-parent="t-shirt"
+                  id="shirtImgOld"
+                />
+              </div>
+            </div>
+          </div>
+          <div id="ring" data-prod-viewer="prod" style="display:none">
+            <h2>
+              <span class="label label-default">Colorize Pen</span>
+            </h2>
+            <div class="g-item text-center">
+              <img
+                src="./img/pen.png"
+                class="prod-image padding-10"
+                data-parent="ring"
+                id="ringImg"
+              />
+            </div>
+          </div>
+          <div id="bottle" data-prod-viewer="prod" style="display:none">
+            <h2>
+              <span class="label label-default">Colorize Bottle</span>
+            </h2>
+            <div class="g-item text-center">
+              <img
+                src="./img/bag_back.jpg"
+                class="prod-image padding-10"
+                data-parent="bottle"
+                id="bottleImg"
+              />
+            </div>
+          </div>
+          <div id="coleParmer" data-prod-viewer="prod" style="display:none">
+            <h2>
+              <span class="label label-default">Colorize New Product</span>
+            </h2>
+            <div class="g-item text-center">
+              <img
+                src="./img/cole_parmer.jpg"
+                class="prod-image padding-10"
+                data-parent="coleParmer"
+                id="coleParmerImg"
+              />
+            </div>
+          </div>
+          <div id="chair" data-prod-viewer="prod" style="display:none">
+            <h2>
+              <span class="label label-default">Colorize Chair</span>
+            </h2>
+            <div class="g-item text-center">
+              <img
+                src="./img/chair.jpg"
+                class="prod-image padding-10"
+                data-parent="chair"
+                id="chairImg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 form-group">
+        <div class="col-md-12 padding-10 hidden">
+          <h2>
+            <span class="label label-danger"
+              >Image loaded in <span id="LoadingTime">Color 2</span> ms.</span
+            >
+          </h2>
+        </div>
+
+        <div class="col-md-12 padding-10 hidden">
+          <h2>
+            <span class="label label-default">Select Product</span>
+          </h2>
+          <div class="col-md-12 padding-10">
+            <img
+              src="./img/shirt.png"
+              data-prod-selector="t-shirt"
+              class="img-rounded prod-img selected"
+              alt="T-Shirt"
+            />
+            <img
+              src="./img/pen.png"
+              data-prod-selector="ring"
+              class="img-rounded prod-img"
+              alt="Ring"
+            />
+            <img
+              src="./img/bag_back.jpg"
+              data-prod-selector="bottle"
+              class="img-rounded prod-img hidden"
+              alt="Bottle"
+            />
+            <img
+              src="./img/cole_parmer.jpg"
+              data-prod-selector="coleParmer"
+              class="img-rounded prod-img"
+              alt="cole parmer"
+            />
+            <img
+              src="./img/chair.jpg"
+              data-prod-selector="chair"
+              class="img-rounded prod-img"
+              alt="Chair"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-12 padding-10">
+          <h3>
+            <span class="label label-info">Cap Color</span>
+          </h3>
+          <!-- Color 1 -->
+          <div class="col-md-12 padding-10" id="color1-parent">
+            <!-- <h4>
+              <span class="label label-info" id="color1-name">Cap Color</span>
+            </h4> -->
+
+            <div id="color1Swatches"></div>
+            <hr />
+            <input type="color" class="form-control" id="color1" value="#ebebeb" />
+          </div>
+
+          <!-- Color 2 -->
+          <div class="col-md-12 padding-10" id="color2-parent">
+            <h4>
+              <span class="label label-info" id="color2-name">Color 2</span>
+            </h4>
+            <input type="color" class="form-control hidden" id="color2" value="#00ff00" />
+            <div id="color2Swatches"></div>
+          </div>
+
+          <!-- Color 3 -->
+          <div class="col-md-12 padding-10" id="color3-parent">
+            <h4>
+              <span class="label label-info" id="color3-name">Ink Type</span>
+            </h4>
+            <input type="text" class="form-control hidden" id="color3" value="black" />
+            <div id="color3Swatches"></div>
+          </div>
+
+          <!-- Color 4 -->
+          <div class="col-md-12 padding-10" id="color4-parent">
+            <h4>
+              <span class="label label-info" id="color4-name">Color 4</span>
+            </h4>
+            <input type="text" class="form-control hidden" id="color4" value="black" />
+            <div id="color4Swatches"></div>
+          </div>
+
+          <!-- Color 5 -->
+          <div class="col-md-12 padding-10" id="color5-parent">
+            <h4>
+              <span class="label label-info" id="color5-name">Color 5</span>
+            </h4>
+            <input type="text" class="form-control hidden" id="color5" value="black" />
+            <div id="color5Swatches"></div>
+          </div>
+
+          <!-- Format -->
+          <div class="col-md-12 padding-10 hidden">
+            <h4>
+              <span class="label label-info">Format</span>
+            </h4>
+            <select id="selectFormat" class="form-control">
+              <option value="gif">GIF</option>
+              <option value="jpg">JPG</option>
+              <option value="png" selected>PNG</option>
+              <option value="bmp">BMP</option>
+              <option value="webp">WEB-P (Only Chrome)</option>
+            </select>
+          </div>
+
+          <!-- Quality -->
+          <div class="col-md-12 padding-10 hidden">
+            <h4>
+              <span class="label label-info">Quality</span>
+            </h4>
+            <select id="quality" class="form-control">
+              <option value="100">100%</option>
+              <option value="95">95%</option>
+              <option value="90">90%</option>
+              <option value="85">85%</option>
+              <option value="80">80%</option>
+              <option value="75">75%</option>
+              <option value="70">70%</option>
+              <option value="65">65%</option>
+              <option value="60">60%</option>
+              <option value="55">55%</option>
+              <option value="50">50%</option>
+              <option value="40">40%</option>
+              <option value="30">30%</option>
+              <option value="20" selected>20%</option>
+              <option value="10">10%</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/handler.js"></script>
+  </body>
+  <html></html>
+</html>

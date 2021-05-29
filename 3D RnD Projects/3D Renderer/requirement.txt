@@ -1,0 +1,17 @@
+
+* All browser including mobile with minimum 4 renderer parallel. - Done (With Emulation)
+* Load texture from canvas - Done 
+* Performance. - Done
+* Consistency in rendering across the browser. - Done
+* Hybrid rendering
+* It should also have composition options (Overlay, Mutiply, Displacement, Alpha) ( Hybrid Rendering ) (Have que?)
+* Add image and update image functionality.
+
+* Change backgraound color of canvas.
+* Zoom
+
+* Preview (is possible on server side)
+
+
+
+

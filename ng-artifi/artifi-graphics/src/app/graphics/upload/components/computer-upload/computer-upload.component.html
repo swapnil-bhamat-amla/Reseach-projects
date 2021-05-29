@@ -1,0 +1,72 @@
+<div *ngIf="!settings.directUploadFlag" class="panel-body tab-pane fade active in">
+    <div class="panel-body browse">
+        <input (change)="fileChange($event.target.files)" #singleUpload type="file" style="display:none" [accept]="getAcceptParams()" />
+        <button (click)="singleUpload.click()" type="file" class="btn btn-primary btn-sm margin-top-10" [title]="localization.BROWSE">
+      <span data-test-selector="lblBrowse">{{ localization.BROWSE }}</span>
+    </button>
+    </div>
+</div>
+
+
+<div *ngIf="settings.directUploadFlag" class="art-plupload plupload_wrapper panel panel-default">
+    <div class="panel-heading">
+        <h3>Image files</h3>
+    </div>
+    <div class="plupload_container" title="">
+        <div class="plupload">
+            <div class="panel-body">
+                <div class="custom" style="padding-left: 0px;">
+                    <ul class="plupload_filelist_header art-tabel">
+                        <li class="plupload_file_name is_tabel-cell">File Name</li>
+                        <li class="plupload_file_size is_tabel-cell">File Size</li>
+                        <li class="plupload_file_status is_tabel-cell">Status</li>
+                        <li class="plupload_file_action is_tabel-cell">Action</li>
+                        <li class="plupload_clearer is_tabel-cell hide">&nbsp;</li>
+                    </ul>
+
+                    <ul class="plupload_filelist">
+                        <li *ngFor="let file of validFiles" class="plupload_delete" [ngClass]="(totalFileUploaded.indexOf(file.key) === -1) ? '' : 'plupload_done'">
+                            <ul class="art-tabel">
+                                <li class="plupload_file_name is_tabel-cell">{{ file.file.name }}</li>
+                                <li class="plupload_file_size is_tabel-cell">{{ file.file.size | FileSize }}</li>
+                                <li class="plupload_file_status is_tabel-cell">
+                                    {{ getFileProgress(file.key) | percent }}
+                                </li>
+                                <li class="plupload_file_action is_tabel-cell">
+                                    <a (click)="deletePhoto(file.key)" href="javascript:void(0)" style="display: block;">
+                                        <i class="atf-delete"></i>
+                                    </a>
+                                </li>
+                                <li class="plupload_clearer hide is_tabel-cell"><i class="atf-delete"><i>&nbsp;</i></i>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div [hidden]="validFiles.length <= 0" class="plupload_filelist_footer">
+                        <ul class="yellowBar art-tabel">
+                            <li class="plupload_progress is_tabel-cell">
+                                <div class="plupload_progress_container">
+                                    <div class="plupload_progress_bar"></div>
+                                </div>
+                            </li>
+                            <li class="plupload_file_size is_tabel-cell"><span class="plupload_total_file_size">{{ totalFileSize | FileSize }}</span></li>
+                            <li class="plupload_upload_status is_tabel-cell hide"></li>
+                            <li class="plupload_file_status is_tabel-cell"><span class="plupload_total_status">{{ (+totalFileUploaded.length + +(currentFilePercent / 100) ) / validFiles.length | percent  }} </span></li>
+                            <li class="plupload_file_action is_tabel-cell"></li>
+                            <li class="plupload_clearer hide is_tabel-cell">&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plupload_buttons clearfix">
+                    <button type="button" (click)="uploadPhotos()" class="plupload_start btn btn-primary btn-sm plupload_disabled" [title]="localization.START_UPLOAD" [disabled]="uploadBtnState">
+            {{ localization.START_UPLOAD }}
+          </button>
+                    <input multiple (click)="stopPropogation($event)" (change)="fileChange($event.target.files)" #inputUpload type="file" style="display:none" [accept]="getAcceptParams()" />
+                    <button (click)="inputUpload.click()" type="button" class="plupload_add btn btn-primary btn-sm" [title]="localization.ADD_PHOTO">
+            {{ localization.ADD_PHOTO }}
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PictureWorker</title>
+
+    <link href="default.css" rel="stylesheet" />
+</head>
+<body id="root">
+	
+    <div id="sourceDiv" class="sourceDiv f-left">
+        <img id="layer1" class="layer-images" src="Images/Layer1_M.png" />
+        <img id="layer2" class="layer-images" src="Images/Layer2_M.png" />
+        <img id="layer3" class="layer-images" src="Images/Layer3_M.png" />
+        <img id="layer4" class="layer-images" src="Images/Layer4.png" /> 
+    </div>
+    <div class="f-left image-options">
+        <div id="layerSelector">
+        <label for="layerSelectorDrop">Select Image Portion</label>
+                <select id="layerSelectorDrop" class="style-option">
+                    <option value="" selected="selected">Select</option>
+                    <option value="layer1">Front Belt</option>
+                    <option value="layer2">Back Belt</option>
+                    <option value="layer3">Plastic Element</option>
+                   <!-- <option value="layer4">Steal Element</option>-->
+                </select>
+        </div>
+        <div id="colorSelector">
+        <label for="colorSelectorDrop">Select Desire Color</label>
+                <select id="colorSelectorDrop" class="style-option">
+                    <option value="" selected="selected">Select</option>
+                    <option value="#5CCAE8" >Light Blue</option>
+                    <option value="#4461e3">Royal Blue</option>
+                    <option value="#6e284c">Plum</option>
+                    <option value="#6e284c">Magenta</option>
+                    <option value="#d01728">Red</option>	
+                    <option value="#ff6240">Orange</option>	
+                    <option value="#e47931">Plumkin</option>
+                    <option value="#ffc47e">Peach</option>	
+                    <option value="#ffc44a">Goldenrod</option>	
+                    <option value="#522e1e">Brown</option>	
+                    <option value="#2a2e37">Black</option>	
+                    <option value="#5aa469">Kelly Green</option>
+                    <option value="#f9f5f7">White</option>
+                </select>
+        </div>
+    </div>
+    <div id="targetDiv">
+        <canvas id="target" class="hide"></canvas>
+    </div>
+    <div id="log"></div>
+</body>
+
+<script src="tools.js"></script>
+<script src="default.js"></script>
+</html>

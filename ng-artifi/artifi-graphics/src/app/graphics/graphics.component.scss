@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'artifi-font';
+    src: url('/Content/fonts/artifi-fonts/artifi-font.eot?c5stpc');
+    src: url('/Content/fonts/artifi-fonts/artifi-font.eot?c5stpc#iefix') format('embedded-opentype'), url('/assets/fonts/artifi-fonts/artifi-font.ttf?c5stpc') format('truetype'), url('/assets/fonts/artifi-fonts/artifi-font.woff?c5stpc') format('woff'), url('/assets/fonts/artifi-fonts/artifi-font.svg?c5stpc#artifi-font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="atf-"],
+[class*=" atf-"] {
+    font-family: 'artifi-font' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tab-pane header h5 {
+    background: #ebebeb none repeat scroll 0 0;
+    padding: 10px 5px;
+    margin: 5px 0;
+}
+
+.tab-pane .badge {
+    background: none;
+    color: #6d6d75;
+}
+
+.content-padding {
+    padding: 5px 10px;
+}
+
+.tab-heading {
+    background: #dbdbdb none repeat scroll 0 0;
+    padding: 10px 15px;
+}
+
+.tab-heading>h3 {
+    font-size: 16px;
+    margin: 6px 0;
+}
+
+.btn {
+    font-size: 12px;
+}
+
+.btn-primary {
+    background: rgba(0, 176, 240, 1);
+    background: -moz-linear-gradient(top, rgba(0, 176, 240, 1) 0%, rgba(0, 159, 224, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 176, 240, 1)), color-stop(100%, rgba(0, 159, 224, 1)));
+    background: -webkit-linear-gradient(top, rgba(0, 176, 240, 1) 0%, rgba(0, 159, 224, 1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 176, 240, 1) 0%, rgba(0, 159, 224, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 176, 240, 1) 0%, rgba(0, 159, 224, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 176, 240, 1) 0%, rgba(0, 159, 224, 1) 100%);
+    border: medium none;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+.btn-default {
+    background: #727a82;
+    background: -moz-linear-gradient(top, #727a82 0%, #54586a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #727a82), color-stop(100%, #54586a));
+    background: -webkit-linear-gradient(top, #727a82 0%, #54586a 100%);
+    background: -o-linear-gradient(top, #727a82 0%, #54586a 100%);
+    background: -ms-linear-gradient(top, #727a82 0%, #54586a 100%);
+    background: linear-gradient(to bottom, #727a82 0%, #54586a 100%);
+    border: medium none;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+    background: #19aff1;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #19aff1 0%, #077eb5 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #19aff1), color-stop(100%, #077eb5));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #19aff1 0%, #077eb5 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #19aff1 0%, #077eb5 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #19aff1 0%, #077eb5 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #19aff1 0%, #077eb5 100%);
+    /* W3C */
+    /* IE6-9 */
+    color: #fff;
+}
+
+.content-area {
+    max-height: 340px;
+    min-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.graphic-content-area {
+    max-height: 415px;
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+.bg-info {
+    background-color: #d9edf7;
+    padding: 5px 10px;
+    color: #277493;
+    margin-bottom: 10px;
+}
+
+.content-margin {
+    margin: 10px 15px;
+}

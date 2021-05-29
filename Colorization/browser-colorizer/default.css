@@ -1,0 +1,37 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100%;
+}
+div {
+    float:none;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+#log {
+    position: absolute;
+    width: 100%;
+    font-size: 28px;
+    color: #960;
+    text-align: center;
+    margin-top: 300px;
+}
+
+.f-left { float:left;}
+.f-right { float:right;}
+.rel-position { position:relative;}
+.hide { display:none;}
+.sourceDiv { position: relative; display:inline-block; min-width:1200px; min-height:690px;}
+.style-option { width:200px;}
+.image-container { width:100%; height:100%;}
+.layer-images { position: absolute; left: 1px;top: 1px;}
+.image-options { font-size:18px; }
+
+

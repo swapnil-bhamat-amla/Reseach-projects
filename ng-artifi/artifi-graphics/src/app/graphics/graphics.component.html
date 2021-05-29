@@ -1,0 +1,20 @@
+<div *ngIf="show" class="tab-pane">
+    <header class="content-padding clearfix tab-heading sub-tab-content">
+        <h3 [attr.data-test-selector]="initState.allowImageWidget ? 'headGraphics' : 'headEditGraphics'" class="pull-left">{{ initState.allowImageWidget ? localization.ADD_EDIT_GRAPHIC : localization.EDIT_GRAPHIC }}</h3>
+        <button (click)="addGraphic()" *ngIf="initState.allowImageWidget" class="btn btn-primary pull-right" title="{{ localization.ADD_GRAPHIC }}">{{ localization.ADD_GRAPHIC }}</button>
+    </header>
+    <section class="content-area graphic-content-area">
+        <!-- <p class="bg-info content-margin">{{ localization.IMAGE_NOT_AVAILABLE_MESSAGE }}</p> -->
+        <div>
+            <div class="clearfix" data-art-container="imageContainer" data-art-module="accordion-content">
+                <artifi-image-widget-list *ngIf="activeComponent == 'image_widget_list'" (ouptupEvent)="outputEvent($event)" [imageWigets]="imageWidgetData.imageWidgets" [localizations]="localization"></artifi-image-widget-list>
+                <artifi-image-library *ngIf="activeComponent == 'image_library'" (outputEvent)="outputEvent($event)" [selectedWidget]="selectedImage" [localizations]="localization" [settings]="settings"></artifi-image-library>
+            </div>
+        </div>
+    </section>
+    <footer class="content-padding">
+        <button (click)="btnBackHandler()" *ngIf="activeComponent == 'image_library'" class="btn btn-primary left" title="{{ localization.BACK }}">{{ localization.BACK }}</button>
+    </footer>
+</div>
+
+<!-- <artifi-confirm-alert [title]="modalTitle" [localization]="localization"></artifi-confirm-alert> -->

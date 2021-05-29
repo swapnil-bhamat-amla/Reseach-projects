@@ -1,0 +1,23 @@
+{
+  "name": "node-filter-demo",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swabha1/image-resize.git"
+  },
+  "scripts": {
+    "generate-thumb-images": "node -e require('./GM_Resize').generateThumbImages()",
+    "generate-std-images": "node -e require('./GM_Resize').generateStdImages()",
+    "generate-both-type-images": "npm run generate-thumb-images && npm run generate-std-images",
+    "generate-thumb-images-bulk": "node -e require('./GM_Resize').generateThumbInBulk()",
+    "generate-std-images-bulk": "node -e require('./GM_Resize').generateStdInBulk()",
+    "generate-both-type-images-bulk": "npm run generate-thumb-images-bulk && npm run generate-std-images-bulk"
+
+  },
+  "author": "Swapnil Bhamat",
+  "license": "MIT",
+  "dependencies": {
+    "gm": "^1.23.0",
+    "json2csv": "^3.11.2"
+  }
+}

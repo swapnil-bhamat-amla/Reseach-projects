@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <app-product (productSelected)="selectedProductCode = $event"></app-product>
+    </div>
+    <div class="col-md-6">
+      <app-preview [selectedProduct]="selectedProductCode" [selectedClipart]="selectedClipartCode" [aspectRatioStatus]="keepAspectRatioStatus" [selectedColor]="colorValue" [coOrdinateObject]="coOrdinateValue" ></app-preview>
+    </div>
+    <div class="col-md-4">
+      <app-clipart [selectedProduct]="selectedProductCode" (clipartSelected)="selectedClipartCode = $event"  (keepAspectRatioToggled)="keepAspectRatioStatus = $event" (colorChanged)="colorValue = $event" (coOrdinateChanged)="coOrdinateValue = $event"></app-clipart>
+    </div>
+  </div>
+</div>

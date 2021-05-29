@@ -1,0 +1,22 @@
+<div class="bootbox modal fade in" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-test-selector="btnPopupCloseX" class="bootbox-close-button close" [title]="modalData.buttons.close">×</button>
+                <h4 class="modal-title" data-test-selector="headPopupTitle">{{ modalData.title }}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="bootbox-body">
+                    <div id="confirmMessage" class="art-msg confirm">
+                        <i data-test-selector="imgPopupIcon" [class]="modalData.iconClass != '' ? modalData.iconClass+ ' art-alert-icon' : '' " class="art-alert-icon"></i>
+                        <span data-test-selector="spanPopupMessage">{{ modalData.body }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="actionButton(modalData.buttons.yes)" type="button" [title]="modalData.buttons.no" class="btn btn-primary">{{ modalData.buttons.yes }}</button>
+                <button *ngIf="modalData.buttons.no !== ''" (click)="actionButton('no')" type="button" [title]="modalData.buttons.no" class="btn btn-default">{{ modalData.buttons.no }}</button>
+            </div>
+        </div>
+    </div>
+</div>

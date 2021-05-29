@@ -1,0 +1,31 @@
+<div class="img-grid clearfix">
+    <div class="art-library-container">
+        <div class="art-library-tab">
+            <ul class="nav nav-tabs parent-tab">
+                <li [class]="activeComponent == 'clipart' ? 'active' : '' "> <span class="arrow-up"></span>
+                    <a href="javascript:void(0)" (click)="setComponent('clipart')" [title]="localizations.CLIPART">
+                        <i class="atf-clipart-icon"></i>
+                        <span data-test-selector="btnClipartCaption">{{ localizations.CLIPART }}</span>
+                    </a>
+                </li>
+                <li [class]="activeComponent == 'upload' ? 'active' : '' " class="art-tabel-cell"> <span class="arrow-up"></span>
+                    <a href="javascript:void(0)" (click)="setComponent('upload')" [title]="localizations.UPLOAD_ATTR_VALUE">
+                        <i class="atf-upload"></i>
+                        <span>{{ localizations.UPLOAD_ATTR_VALUE }}</span>
+                    </a>
+                </li>
+                <li [class]="activeComponent == 'my-art' ? 'active' : '' " class="art-tabel-cell"> <span class="arrow-up"></span>
+                    <a href="javascript:void(0)" (click)="setComponent('my-art')" [title]="localizations.MY_ART">
+                        <i class="atf-star"></i>
+                        <span data-test-selector="lblMyArt">{{ localizations.MY_ART }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content art-library-content">
+            <artifi-cliparts *ngIf="activeComponent == 'clipart'" (outputEvents)="clipartOutput($event)" [settings]="settings"></artifi-cliparts>
+            <artifi-upload (outputEvent)="uploadOutput($event)" [settings]="settings" [localizations]="localizations" *ngIf="activeComponent == 'upload'"></artifi-upload>
+            <artifi-my-art (outputEvents)="clipartOutput($event)" [localizations]="localizations" [settings]="settings" *ngIf="activeComponent == 'my-art'"></artifi-my-art>
+        </div>
+    </div>
+</div>

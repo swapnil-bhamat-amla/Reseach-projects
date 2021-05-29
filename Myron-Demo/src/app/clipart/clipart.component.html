@@ -1,0 +1,79 @@
+<div class="row">
+
+  <div class="col-lg-12">
+    <h3 class="page-header">Properties</h3>
+  </div>
+
+  <div class="row">
+        <ul class="gallery">
+                <li *ngFor="let clipart of cliparts" (click)="clipartSelectedHnd(clipart.code)" [ngClass]="{'selected': selctedClipart == clipart.code}">
+                    <a href="#"><img class="img-responsive" src="{{clipart.path}}"  alt="image" /></a>
+                </li>
+        </ul>
+  </div>
+  <div class="row hidden" >
+    <div class="col-lg-12">
+        <div class="form-group checkbox">
+            <label><input type="checkbox" [(ngModel)]="keepAspectRatio" (change)="aspectRatioHnd()">Keep Aspect Ratio?</label>
+        </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-lg-12">
+        <h4>Imprint Colors</h4>
+            <ul class="swatches">
+                    <li>
+                        <div title="White" class="swatch swatch-clickable" [ngClass]="{'selected': selctedHex == '#000'}"  style="background-color:#000" (click)="colorChangedHnd('#000')" ></div>
+                    </li>
+                    <li>
+                        <div title="White" class="swatch swatch-clickable" [ngClass]="{'selected': selctedHex == '#fff'}"  style="background-color:#fff" (click)="colorChangedHnd('#fff')"></div>
+                    </li>
+                    <li>
+                        <div title="Red" class="swatch swatch-clickable" [ngClass]="{'selected': selctedHex == '#f00'}" style="background-color:#f00" (click)="colorChangedHnd('#f00')"></div>
+                    </li>
+                    <li>
+                        <div title="Green" class="swatch swatch-clickable" [ngClass]="{'selected': selctedHex == '#0f0'}" style="background-color:#0f0" (click)="colorChangedHnd('#0f0')"></div>
+                    </li>
+                    <li>
+                        <div title="Blue" class="swatch swatch-clickable" [ngClass]="{'selected': selctedHex == '#00f'}" style="background-color:#00f" (click)="colorChangedHnd('#00f')"></div>
+                    </li>
+            </ul>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+        <div class="col-md-3 col-xs-6">
+            <div class="form-group">
+                <label for="y">Top:</label>
+                <input type="text" class="form-control" id="y" [(ngModel)]="coOrdinate.y">
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="form-group">
+                <label for="x">left:</label>
+                <input type="text" class="form-control" id="x" [(ngModel)]="coOrdinate.x">
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="form-group">
+                <label for="width">Width:</label>
+                <input type="text" class="form-control" id="width" [(ngModel)]="coOrdinate.width">
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <input type="text" class="form-control" id="height" [(ngModel)]="coOrdinate.height">
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+                  <button class="form-control btn btn-primary" (click)="coOrdinateChangedHnd()">Update</button>  
+            </div>
+        </div>
+  </div>
+  
+
+  
+</div>

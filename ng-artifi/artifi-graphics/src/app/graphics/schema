@@ -1,0 +1,7 @@
+
+
+
+const initGraphics = {
+  allowImageWidget: main.Models.ConstraintsModel.getApplicationConstraints(main.Models.EditorModel.getActiveViewId()).AllowImageWidget.UserDerived
+}
+

@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-1.6.2.min.js"></script>
+  </head>
+
+  <body style="margin: 0px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-9 col-sm-12 col-xs-12 border-right">
+        <div class="overlay text-center" id="loader">
+          <div class="text-center">
+            <img src="./img/loader.gif" />
+          </div>
+        </div>
+        <div id="t-shirt" data-prod-viewer="prod" style="display:block">
+          <h2>
+            <span class="label label-default">Colorize T-Shirt</span>
+          </h2>
+          <div class="g-item text-center" id="svgPreview"></div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+        <!-- <div class="col-md-12 padding-10">
+          <h2>
+            <span class="label label-default">Select Product</span>
+          </h2>
+          <div class="col-md-12 padding-10">
+            <img
+              src="./svg/Front.svg"
+              data-prod-selector="front"
+              class="img-rounded prod-img selected"
+              alt="Front"
+            />
+            <img
+              src="./svg/Back.svg"
+              data-prod-selector="back"
+              class="img-rounded prod-img"
+              alt="Back"
+            />
+          </div>
+        </div> -->
+
+        <div class="col-md-12 padding-10">
+          <h2>
+            <span class="label label-default">Properties</span>
+          </h2>
+          <div class="row">
+            <div class="col-md-6 padding-10" id="color1-parent">
+              <h4>
+                <span class="label label-info" id="color1-name">Body Color</span>
+              </h4>
+              <input
+                type="color"
+                class="form-control"
+                data-attr="color"
+                id="color1"
+                value="#F9F9F9"
+              />
+            </div>
+            <div class="col-md-6 padding-10" id="color2-parent">
+              <h4>
+                <span class="label label-info" id="color2-name">Text Color 1</span>
+              </h4>
+              <input
+                type="color"
+                class="form-control"
+                data-attr="color"
+                id="color2"
+                value="#64001E"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 padding-10" id="color3-parent">
+              <h4>
+                <span class="label label-info" id="color3-name">Text Color 2</span>
+              </h4>
+              <input
+                type="color"
+                class="form-control"
+                data-attr="color"
+                id="color3"
+                value="#6E091B"
+              />
+            </div>
+            <div class="col-md-6 padding-10" id="font-family-parent">
+              <h4>
+                <span class="label label-info" id="font-family-name">Font Family</span>
+              </h4>
+              <select name="font-family" class="form-control" data-attr="color" id="font-family">
+                <option value="ArialMT" selected>ArialMT</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Cambria">Cambria</option>
+                <option value="Calibri">Calibri</option>
+                <option value="Impact">Impact</option>
+                <option value="Segoe Script">Segoe Script</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 padding-10">
+              <h4>
+                <span class="label label-info">Text 1</span>
+              </h4>
+              <input
+                type="text"
+                data-attr="text-box"
+                style="text-transform: uppercase"
+                class="form-control"
+                id="text-one"
+                value="MENOMONIE"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 padding-10">
+              <h4>
+                <span class="label label-info">Text 2</span>
+              </h4>
+              <input
+                type="text"
+                data-attr="text-box"
+                style="text-transform: uppercase"
+                class="form-control"
+                id="text-two"
+                value="MUSTANGS"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/colorizer.js"></script>
+  </body>
+</html>

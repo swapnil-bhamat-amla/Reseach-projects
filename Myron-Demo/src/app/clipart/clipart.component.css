@@ -1,0 +1,52 @@
+ul.swatches{
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    clear: both;
+ } 
+ .swatches li{
+     float: left;
+ }
+ .swatch {
+     width: 30px;
+     height: 30px;
+     border-radius: 5px;
+     border: 2px solid #666;
+     margin: 3px;
+ }
+ 
+ .swatch-clickable:hover {
+ border: 2px solid #ff0000;
+ cursor: pointer;
+ }
+ .swatch-clickable.selected { border:solid 2px #ff0000; }
+
+
+
+ul.gallery li {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+}
+
+.gallery li {
+    display: inline;
+    list-style: none;
+    width: 100px;
+    min-height: 100px;
+    float: left;
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    border: 2px solid #ccc;
+    text-align: center;
+}
+
+.gallery li.selected {
+    border:solid 2px #ff0000;
+}
+
+ul.gallery li img {
+    vertical-align: middle;
+}
+
+  

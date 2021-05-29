@@ -1,0 +1,39 @@
+{
+  "name": "node-filter-demo",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swabha1/image-resize.git"
+  },
+  "scripts": {
+    "generate-thumb-images": "node -e require('./GM_Resize').generateThumbImages()",
+    "generate-std-images": "node -e require('./GM_Resize').generateStdImages()",
+    "generate-both-type-images": "npm run generate-thumb-images && npm run generate-std-images",
+    "generate-thumb-images-bulk": "node -e require('./GM_Resize').generateThumbInBulk()",
+    "generate-std-images-bulk": "node -e require('./GM_Resize').generateStdInBulk()",
+    "generate-both-type-images-bulk": "npm run generate-thumb-images-bulk && npm run generate-std-images-bulk",
+
+    "remove-color-from-image": "node -e require('./GM_Resize').removeColorFromImages()",
+    "remove-background-from-images": "node -e require('./GM_Resize').removeBackgroundFromImages()",
+    "add-black-and-white-to-images": "node -e require('./GM_Resize').addBlackWhiteEffectToImages()",
+    "add-tint-to-images": "node -e require('./GM_Resize').addTintEffectToImages()",
+    "add-emboss-to-images": "node -e require('./GM_Resize').addEmbossEffectToImages()",
+    "is-images-transparent": "node -e require('./GM_Resize').isTransparentImages()",
+    "fill-color-to-images": "node -e require('./GM_Resize').fillColorToImages()",
+    "fill-color-to-text": "node -e require('./GM_Resize').fillColorToText()",
+    "add-embroidery-inner-shadow-to-images": "node -e require('./GM_Resize').addEmbroideryInnerShadowToImages()",
+    "add-embroidery-to-images": "node -e require('./GM_Resize').addEmbroideryToImages()",
+    "add-texture-to-images": "node -e require('./GM_Resize').addTextureEffectToImages()",
+    "add-texture-trim-to-images": "node -e require('./GM_Resize').addTextureTrimToImages()",
+    "add-emboss-deboss-effect-to-images": "node -e require('./GM_Resize').addEmbossDebossEffectToImages()",
+    "add-tint-with-color-to-images": "node -e require('./GM_Resize').addTintEffectWithColorToImages()",
+    "add-grayscale-effect-to-images": "node -e require('./GM_Resize').addGrayscaleEffectToImages()"
+    
+  },
+  "author": "Swapnil Bhamat",
+  "license": "MIT",
+  "dependencies": {
+    "gm": "^1.23.0",
+    "json2csv": "^3.11.2"
+  }
+}

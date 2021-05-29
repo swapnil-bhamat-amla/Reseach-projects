@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'artifi-font';
+    src: url('/Content/fonts/artifi-fonts/artifi-font.eot?c5stpc');
+    src: url('/Content/fonts/artifi-fonts/artifi-font.eot?c5stpc#iefix') format('embedded-opentype'), url('/assets/fonts/artifi-fonts/artifi-font.ttf?c5stpc') format('truetype'), url('/assets/fonts/artifi-fonts/artifi-font.woff?c5stpc') format('woff'), url('/assets/fonts/artifi-fonts/artifi-font.svg?c5stpc#artifi-font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="atf-"],
+[class*=" atf-"] {
+    font-family: 'artifi-font' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.content-margin {
+    margin: 10px 15px;
+}
+
+.bg-info {
+    background-color: #d9edf7;
+    padding: 5px 10px;
+    color: #277493;
+    margin-bottom: 10px;
+}
+
+.atf-delete:before {
+    content: "\e9ac";
+}
+
+.art-grid {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.art-grid li {
+    display: inline-block;
+    margin: 2% 2% 10px 2%;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+}
+
+.art-grid li:hover .art-frame {
+    border-color: #00a5e6;
+}
+
+.art-grid li {
+    text-align: center;
+    margin: 2%;
+    overflow: visible;
+}
+
+.is_corner-btn-rt {
+    right: 0;
+    top: 0;
+}
+
+.art-corner-btn {
+    position: absolute;
+    font-size: 22px;
+    z-index: 99;
+    color: #000;
+}
+
+.art-grid li .art-frame .art-corner-btn:hover {
+    background: #000;
+    color: #fff;
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    margin: 2px;
+}
+
+.img-selector .art-grid li .art-frame {
+    height: 70px;
+}
+
+.art-grid li .art-frame {
+    width: 75px;
+    height: 80px;
+    border: 3px solid #c6c6c6;
+    background: #fff;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.art-frame {
+    position: relative;
+    display: block;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+a {
+    color: #00a5e5;
+    cursor: pointer;
+}
+
+.art-grid li {
+    text-align: center;
+    margin: 10px;
+    overflow: visible;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.art-grid li .art-frame .art-corner-btn {
+    background: rgba(3, 3, 3, 0.09) none repeat scroll 0 0;
+    color: #000;
+    font-size: 14px;
+    padding: 2px 2px 5px 4px;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    -o-transition: all 0.1s ease-in-out 0s;
+    -webkit-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
+}
+
+[class^="atf-"],
+[class*=" atf-"] {
+    font-family: 'artifi-font' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.art-img-box {
+    display: inline-block;
+    float: left;
+    height: 75px;
+    max-height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.is_center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.art-img-opt-ctr {
+    width: 75px;
+}
+
+.img-grid .btn-group>.btn,
+.img-grid .btn-group-vertical>.btn {
+    float: none;
+}
+
+.art-img-opt-ctr .btn {
+    padding: 2px 8px 0 4px;
+    background: none;
+    color: #00a5e6;
+    font-size: 11px;
+}
+
+.art-img-opt-ctr button {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .art-grid li .art-frame .art-img-box {
+        height: 80px;
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    .art-grid li .art-frame .art-img-box {
+        height: 80px;
+    }
+}

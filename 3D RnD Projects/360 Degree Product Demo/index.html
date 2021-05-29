@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Fabric Functionality Test</title>
+<link  rel="stylesheet" href="styles.css"  />
+<link  rel="stylesheet" href="css/bootstrap.css"  />
+<script type="application/javascript" src="jquery.js" ></script>
+<!-- Merged Changes with new fabric -->
+<script type="application/javascript" src="fabric.js" ></script>
+<script type="application/javascript" src="fabricExtension.js" ></script>
+<script type="application/javascript" src="fabricCustomPathExt.js" ></script>
+<script type="application/javascript" src="fabricPathTextExt.js" ></script>
+<script type="application/javascript" src="CircleTextExt.js" ></script>
+<script type="application/javascript" src="AudioExt.js" ></script>
+<script type="application/javascript" src="Object.js" ></script>
+
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/screen.css" rel="stylesheet" />
+<script src="js/jscolor.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/gxcore.js"></script>
+<script src="js/textureobj.js"></script>
+	
+<script type="text/javascript">       
+	$(document).ready(function () {
+		var demo = new Demo($("#demo")[0]);
+		demo.load('js/case.obj', function () {
+			demo.start();
+			addOtherObjects();
+		});
+	});
+
+	function onBackColorChanged(selectedValue) {
+		var canvasDiv = document.getElementById("canvas");
+		if (selectedValue == "white") {
+			canvasDiv.style.backgroundColor = "#ffffff";
+		} else if (selectedValue == "black") {
+			canvasDiv.style.backgroundColor = "#000000";
+		}
+	}
+
+	function onPlayPauseClick() {
+		playing = !playing;
+		if (playing) {
+			document.getElementById("playPauseButton").setAttribute("class", "button pause");
+		} else {
+			document.getElementById("playPauseButton").setAttribute("class", "button play");
+		}
+	}
+</script>
+</head>
+
+<body>
+<h1>3D Preview Application</h1>
+<div class="wrapper"><!---->
+      <div class="col-md-4 border-left-0">
+        <h2>2D Designer</h2>
+        <canvas id="testCan" width="260" height="340"> </canvas>
+        <div class="headerDivider"></div>
+      </div>
+	   <div class="col-md-4 border-left-0">
+           <h2>3D Preview</h2>
+            <canvas id="demo" width="260" height="340"></canvas>
+            <div class="headerDivider"></div>
+        </div>
+        <div class="col-md-3">
+                <h2>Property Panel</h2>
+                <div class="form-group">
+                    <button id="addText" class="btn btn-primary">Add Text</button>
+                    <button id="addPathText" class="btn btn-primary">Add Path Text</button>
+					<button id="addAudio" class="btn btn-primary">Add Image</button>
+                </div>
+          <div>
+                <div class="form-group">
+                    <label for="changeText">Text : </label>
+                    <input type="text" class="form-control" name="changeText" id="changeText" value="360 Degree Sample Demo."  />
+                </div>
+                <div id="pathTextProperties" class="form-group">
+                    <label for="shapeType">Shape Type : </label>
+                    <select id="shapeType" class="form-control">
+                        <option value="Circle">Circle</option>
+                        <!--<option value="CustomCircle" selected="selected">Custom Circle</option>-->
+                        <option value="Hen">Hen</option>
+                        <option value="Curve1" selected>Curve 1</option>
+                        <option value="Curve2">Curve 2</option>
+                        <option value="Curve3">Curve 3</option>
+                        <option value="Line1">Line 1</option>
+                        <option value="Line2">Line 2</option>
+                        <option value="box">Box</option>
+                        <option value="arc">Arc</option>
+                         <option value="arc1">Arc 1</option>
+                    </select>
+                </div>
+                <div id="circleTextProperties">
+                    <div class="form-group">
+                        <label for="changeRadius">Radius : </label>
+                        <input type="text" class="form-control" name="changeRadius" id="changeRadius" value="150">
+                    </div>
+                    <div class="form-group">
+                        <label for="startAngle">Start Angle (Range -359 to 359): </label>
+                        <input type="text" class="form-control" name="startAngle" id="startAngle" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="endAngle">End Angle (Range -359 to 359) : </label>
+                        <input type="text" class="form-control" name="endAngle" id="endAngle" value="180">
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="Direction">Direction : </label>
+                        <select id="Direction" class="form-control">
+                            <option value="ClockWise">ClockWise</option>
+                             <option value="AntiClockWise">Anti-ClockWise</option>
+                        </select>
+                    </div>-->
+                </div>
+
+                <div class="form-group">
+                    <label for="fontFamily">Font Family : </label>
+                    <select id="fontFamily" class="form-control">
+                        <option value="Consolas">System-Consolas</option>
+                        <option value="Courier">System-Courier</option>
+                        <option value="Courier New">System-Courier New</option>
+                        <option value="Lucida Console">System-Lucida Console</option>
+                        <option value="Cambria Math">System-Cambria Math</option>
+                        <option value="Marlett">System-Marlett</option>
+                        <option value="Arial">System-Arial</option>
+                        <option value="Alex Brush_R">Custom-Alex Brush Regular</option>
+                        <option value="Bellota_B">Custom-Bellota_B</option>
+                        <option value="Bellota_BI">Custom-Bellota_BI</option>
+                        <option value="Bellota_I">Custom-Bellota_I</option>
+                        <option value="Bellota_R">Custom-Bellota_R</option>
+                        <option value="GhostKid AOE_R">GhostKid AOE_R</option>
+                        <option value="Calligraffiti_R">Custom-Calligraffiti_R</option>
+                        <option value="Hammersmith One_R">Custom-Hammersmith One_R</option>
+                        <option value="Impact_R">Custom-Impact_R</option>
+                        <option value="Kaushan Script_R">Custom-Kaushan Script_R</option>
+                    </select>
+                </div>
+				<div class="form-group">
+                    <label for="textAlign">Alignment : </label>
+                    <select id="textAlign" class="form-control">
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                        <option value="justify">Justify</option>
+                       
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fontSize">Font Size : </label>
+                    <select id="fontSize" class="form-control">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30" selected="selected">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="changeFontColor">Font Color : </label>
+                    <input type="color" name="changeFontColor" id="changeFontColor" class="form-control" value=""  />
+                </div>
+                <!--<div class="form-group">
+                    <label for="removeChar">Remove Extra Character : </label>
+                    <select id="removeChar" class="form-control">
+                        <option value="removeExtraChar">Angle Detection</option>
+                        <option value="wantTextPathWithLessOverlap">Edge Detection</option>
+                    </select>
+                </div>-->
+                <div class="form-group">
+                    <button id="exportSVG" class="btn btn-success" onClick="exportCanvasToSVG()">Export SVG</button>
+                </div>
+                <!--<div class="form-group">
+                    <label for="exportJSON">Export JSON : </label>
+                    <button id="exportJSON" class="btn btn-warning" onClick="exportCanvasToJSON()">JSON</button>
+                </div>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

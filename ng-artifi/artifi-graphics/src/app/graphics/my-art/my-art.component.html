@@ -1,0 +1,15 @@
+<div style="max-height:200px; overflow:auto" class="art-grid-thumb col-xs-12 no-padding">
+
+    <div *ngFor="let asset of assetsList" class="col-xs-3 text-center no-padding art-frame-thumb-container">
+        <div class="art-frame-thumb" [title]="asset.ImageName">
+
+            <span (click)="deleteUserPhoto(asset.Id)" title="Delete" class="atf-delete art-corner-btn is_corner-btn-rt"></span>
+
+            <img (click)="selectImage(asset)" class="dragImg is_center bttrlazyloading" [src]="settings.myart.myartThumbUrl + asset.UniqueName + asset.Extension" [alt]="asset.ImageName" />
+
+        </div>
+        <div class="art-caption is_truncate" [title]="asset.ImageName">{{ asset.ImageName }}</div>
+    </div>
+</div>
+
+<artifi-confirm-alert *ngIf="showModal" (outputEv)="modelHandler($event)" [modalData]="modalData"></artifi-confirm-alert>

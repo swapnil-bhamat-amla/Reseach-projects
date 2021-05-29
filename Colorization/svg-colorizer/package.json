@@ -1,0 +1,19 @@
+{
+  "name": "svg-colorizer",
+  "version": "1.0.0",
+  "description": "svg colorizer using javascipt",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [
+    "javascript",
+    "svg",
+    "colorizer"
+  ],
+  "author": "Swapnil Bhamat",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

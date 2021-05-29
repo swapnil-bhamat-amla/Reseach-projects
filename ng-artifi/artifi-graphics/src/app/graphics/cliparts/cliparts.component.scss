@@ -1,0 +1,75 @@
+.art-clipart-lib .art-grid {
+    text-align: center;
+}
+
+.art-clipart-lib .art-grid li {
+    float: left;
+}
+
+.tab-content-area .art-grid li .art-frame {
+    width: 80px;
+    height: 80px;
+}
+
+.art-grid li .art-frame .art-img-box {
+    height: 80px;
+}
+
+.art-grid-thumb .col-xs-3 {
+    float: none;
+    display: inline-block;
+}
+
+.art-prod-attr-grid .art-grid li .art-frame,
+.art-grid-custom-attr .art-grid li .art-frame {
+    height: 35px;
+    width: 35px;
+    overflow: visible;
+}
+
+.art-prod-attr-grid .color-swatch-grid li .art-frame,
+.art-grid-custom-attr .color-swatch-grid li .art-frame {
+    height: 50px;
+    width: 50px;
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+.art-grid-thumb .art-frame-thumb {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto 5px auto;
+    height: 55px;
+    width: 55px;
+    border: 3px solid #c3c3c3
+}
+
+.art-grid-thumb .art-frame-thumb img {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+
+/*.art-grid-thumb .art-caption{display:none;}*/
+
+.art-grid-thumb .art-frame-thumb:hover,
+.art-grid-thumb .art-frame-thumb-container.selected .art-frame-thumb,
+.art-grid-thumb .art-frame-thumb.selected {
+    border: 3px solid #00a5e6;
+}
+
+.art-grid-thumb .col-xs-3 {
+    width: 63px;
+    display: inline-block;
+    float: none;
+}

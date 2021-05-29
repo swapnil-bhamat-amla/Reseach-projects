@@ -1,0 +1,21 @@
+<p *ngIf="imageWigets.length <= 0" class="bg-info content-margin" data-test-selector="lblGraphicsMessage">
+    {{ localizations['IMAGE_NOT_AVAILABLE_MESSAGE'] }}
+</p>
+
+<div class="img-grid content-ctr clearfix img-selector content-padding">
+    <ul class="art-grid">
+        <li *ngFor="let img of imageWigets">
+            <a class="art-frame">
+                <span (click)="deleteImage(img)" class="atf-delete art-corner-btn is_corner-btn-rt" [title]="localizations['DELETE']"></span>
+                <div class="art-img-box">
+                    <img (click)="selectImage(img)" class="is_center bttrlazyloading" [src]="img.originalUrl">
+                </div>
+            </a>
+            <div *ngIf="img.AllowClipartCaption" class="art-img-opt-ctr btn-group">
+                <button (click)="selectImage(img)" class="btn hideChangeLink" [title]="localizations['CHANGE']" data-test-selector="btnChangeImage">{{ localizations['CHANGE'] }}</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<artifi-confirm-alert *ngIf="showModal" (outputEv)="modelHandler($event)" [modalData]="modalData"></artifi-confirm-alert>

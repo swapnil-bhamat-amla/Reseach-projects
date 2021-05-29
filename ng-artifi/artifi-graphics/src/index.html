@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GraphicsComponent</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="http://localhost:1534/Content/CSS/bootstrap/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="http://localhost:1534/Content/CSS/style-layout8.css" /> -->
+    <!-- <link rel="stylesheet" href="http://localhost:1534/Content/CSS/base/base.css" /> -->
+
+
+
+</head>
+
+<body>
+    <!-- <artifi-graphics [inputData] outputEvents></artifi-graphics> -->
+
+
+    <!-- <artifi-image-widget-list [allowDelete]="true" [allowCaption]="true" [localizations]="localization"></artifi-image-widget-list> -->
+
+</body>
+
+</html>
+
+
+
+<script>
+    // document.querySelector('body').appendChild(document.createElement('artifi-graphics'))
+
+    // var artifiGraphics = document.querySelector('artifi-graphics');
+    // setTimeout( function() { artifiGraphics.inputData = 'sunil'; }, 1000);
+    // artifiGraphics.inputData = 'sunil';
+    document.querySelector('body').appendChild(document.createElement('artifi-graphics'));
+    var artifiGraphics = document.querySelector('artifi-graphics');
+    artifiGraphics.inputData = {
+        initGraphics: {
+            allowImageWidget: true
+        }
+    };
+
+    artifiGraphics.inputData = {
+        "show": false,
+        "initGraphics": {
+            "allowImageWidget": false
+        },
+        "imageWidgetList": {
+            "imageWidgets": [{
+                "AllowAsAProductImage": false,
+                "AllowClipartCaption": true,
+                "AllowDelete": true,
+                "AllowEditable": true,
+                "AllowMove": true,
+                "AllowNoneOption": true,
+                "AllowRotation": true,
+                "AllowScale": true,
+                "AllowTint": false,
+                "AllowTintOpacity": false,
+                "type": "image",
+                "originX": "center",
+                "originY": "center",
+                "left": 29.15,
+                "top": 37.04,
+                "width": 480,
+                "height": 480,
+                "fill": "",
+                "stroke": null,
+                "strokeWidth": 1,
+                "strokeDashArray": null,
+                "strokeLineCap": "butt",
+                "strokeLineJoin": "miter",
+                "strokeMiterLimit": 1,
+                "scaleX": 0.12,
+                "scaleY": 0.12,
+                "angle": 0,
+                "flipX": false,
+                "flipY": false,
+                "opacity": 1,
+                "shadow": null,
+                "visible": true,
+                "clipTo": null,
+                "backgroundColor": "",
+                "fillRule": "nonzero",
+                "globalCompositeOperation": "source-over",
+                "widgetType": "clipart",
+                "widgetSubType": null,
+                "id": "image_1",
+                "originalWidth": 110,
+                "originalHeight": 110,
+                "imageUniqueName": "placeholder",
+                "originalUrl": "http://localhost:8081/UserImages/137708DD-8198-4922-B167-0C90CA79F57F/7e07530c-95c9-4f90-9187-dbb615082e84/Cliparts/Standard/01e90fea-c32f-4e54-9211-bfea98005000.jpg",
+                "scaleFactor": 1,
+                "cropArea": {
+                    "width": 110,
+                    "height": 110,
+                    "positionX": 0,
+                    "positionY": 0,
+                    "positionEndX": 110,
+                    "positionEndY": 110
+                },
+                "customFilters": [],
+                "currentWidgetWidth": 57.599999999999994,
+                "currentWidgetHeight": 57.599999999999994,
+                "ImageUniqueNameOnUGC": "placeholder",
+                "decalId": "",
+                "libProp": {
+                    "photoId": null,
+                    "ClipartId": 63594,
+                    "TintColorId": null,
+                    "ClipartFamilyId": 3545
+                },
+                "printImage": "",
+                "printImageMimeType": "",
+                "caption": "Image",
+                "widget_key": "",
+                "group_key": "",
+                "price_key": "",
+                "shopbylogo_key": "",
+                "WidgetBorder": false,
+                "Rotate180Degree": false,
+                "src": "http://localhost:8081/UserImages/137708DD-8198-4922-B167-0C90CA79F57F/7e07530c-95c9-4f90-9187-dbb615082e84/Cliparts/Standard/01e90fea-c32f-4e54-9211-bfea98005000.jpg",
+                "filters": [],
+                "crossOrigin": "anonymous",
+                "PreserveWidgetAspectRatio": true,
+                "PreserveImageAspectRatio": false,
+                "IsVisibleOnOutput": true
+            }],
+            "activeImageWidget": 0
+        },
+        "settings": {
+            "websiteId": 418,
+            "divisionId": 383,
+            "productId": 98089,
+            "webApiClientKey": "185365d1-5cb0-4a9e-98bd-a9ce0b34cedc",
+            "sku": "",
+            "productCode": "test-green-tshirt",
+            "pageIndex": 1,
+            "pageSize": 25,
+            "isDesigner": true,
+            "isFirstLoad": true,
+            "productViewId": 98724,
+            "templateId": 0,
+            "CompanyPhysicalFolderName": "137708DD-8198-4922-B167-0C90CA79F57F",
+            "frontAppUserId": 114508,
+            "companyId": 21,
+            "loader": "",
+            "hostUrl": "//localhost:1534/",
+            "clipartAction": "/Designer/Services/GetCliparts",
+            "clipartThumbPath": "http://localhost:8081/UserImages/137708DD-8198-4922-B167-0C90CA79F57F/7e07530c-95c9-4f90-9187-dbb615082e84/Cliparts/Thumbnail/",
+            "clipartImagePath": "http://localhost:8081/UserImages/137708DD-8198-4922-B167-0C90CA79F57F/7e07530c-95c9-4f90-9187-dbb615082e84/Cliparts/Standard/",
+            "upload": {
+                "computer": {
+                    "isActive": false,
+                    "directUploadFlag": true,
+                    "fileType": "jpeg,jpg,png",
+                    "maxFileCount": 1,
+                    "maxFileSize": "5",
+                    "multiSelection": false,
+                    "uploadURL": "//localhost:1534//Designer/Services/UploadUserPhotos"
+                }
+            },
+            "myart": {
+                "getPhotosUrl": "//localhost:1534/Designer/Services/GetUserPhotos",
+                "deletePhotoUrl": "//localhost:1534/Designer/Services/DeleteUserPhoto",
+                "myartThumbUrl": "http://localhost:8082/UserPhoto/137708DD-8198-4922-B167-0C90CA79F57F/Photos/Thumbnail/"
+            }
+        }
+    }
+</script>

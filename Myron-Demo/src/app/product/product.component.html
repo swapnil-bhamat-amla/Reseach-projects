@@ -1,0 +1,12 @@
+<div class="row">
+
+  <div class="col-lg-12">
+      <h3 class="page-header">Select Product</h3>
+  </div>
+
+  <div *ngFor="let product of products" class="col-lg-12 col-md-12 col-xs-3 thumb">
+      <a class="thumbnail" href="#">
+          <img class="img-responsive" src="{{product.path}}" (click)="productSelectedHnd(product.code)" alt="">
+      </a>
+  </div>
+</div>

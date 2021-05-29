@@ -1,0 +1,32 @@
+.button {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    text-indent: -8000px;
+    text-align: left !important;
+    position: relative;
+    font-size: 11px;
+    padding: 3px 4px;
+    margin-bottom: 4px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    line-height: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+}
+
+.button.play { background:url(../../img/art/transparent.png) no-repeat -60px 0 }
+.button.pause { background:url(../../img/art/transparent.png) no-repeat -90px 0 }
+
+#canvas { margin-bottom: 20px; }
+
+#note {
+    font-size: 11px;
+    line-height: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+label { font-size: 16px; }

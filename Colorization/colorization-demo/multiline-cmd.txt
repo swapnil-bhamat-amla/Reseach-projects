@@ -1,0 +1,72 @@
+convert ^
+    very-very-large.png ^
+   -write mpr:XY ^
+   +delete ^
+   -respect-parentheses ^
+     ^( mpr:XY -crop 3000x2001+0+491 -resize 170x116   +write pic1.png   ^) ^
+     ^( mpr:XY -crop 2981x2883+8+0   -resize 75x75     +write pic2.png   ^) ^
+     ^( mpr:XY -crop 1100x1983+0+0   -resize 160x160   +write pic3.png   ^) ^
+     ^( mpr:XY -crop 2000x2883+0+0   -resize 1024x960  +write pic4.png   ^) ^
+     ^( mpr:XY -crop 1000x2883+0+0   -resize 190x188   +write mpr:pic5   ^) ^
+     ^( mpr:pic5                                             +write pic5.png   ^) ^
+     ^( mpr:XY -crop 3000x2000+0+0   -resize 2048x2047 +write pic6.png   ^) ^
+     ^( mpr:XY -crop 3000x2883+0+0   -resize 595x421   +write pic7.png   ^) ^
+     ^( mpr:XY -crop 3000x2883+0+0   -resize 3000x2883 +write mpr:AB     ^) ^
+     ^( mpr:AB                                               +write pic8.tiff  ^) ^
+     ^( mpr:AB -blur 0x8                                     +write blur1.gif  ^) ^
+     ^( mpr:pic5 mpr:AB +append mpr:pic5 -append             +write append.png ^) ^
+     ^( mpr:pic5 -rotate -130 mpr:AB -gravity center                              ^
+                 -compose difference -composite +write final.png               ^) ^
+null: 
+
+CMD command
+============
+Speed command
+==============
+
+Using MPR
+=============
+
+ECHO Start Measure %Time% >> timer.txt & ^
+convert ^
+      -bench 10 ^
+      -respect-parentheses ^
+	      ^( body_mask.png -colorspace RGB -background rgb(255,00,00) -alpha Shape +write mpr:mask2  ^) ^
+	      ^( body.png mpr:mask2 -compose Multiply -composite +write mpr:layer2      ^) ^
+		  ^( cover_mask.png -colorspace RGB -background rgb(255,255,00) -alpha Shape +write mpr:mask3  ^) ^
+	      ^( cover.png mpr:mask3 -compose Multiply -composite +write mpr:layer3     ^) ^
+	      ^( blue.png mpr:layer2 mpr:layer3 -flatten +write pen.png     ^) ^
+		  null: & ^
+ECHO Stop Measure %Time% >> timer.txt
+
+Using Clone
+============
+
+ECHO Start Measure %Time% >> timer.txt & ^
+ convert ^
+      -bench 10 ^
+      -respect-parentheses ^
+	      ^( body_mask.png -colorspace RGB -background rgb(255,00,00) -alpha Shape  ^) ^
+	      ^( body.png -clone 0 -compose Multiply -composite   ^) ^
+		  ^( cover_mask.png -colorspace RGB -background rgb(255,255,00) -alpha Shape  ^) ^
+	      ^( cover.png -clone 2 -compose Multiply -composite     ^) ^
+	      ^( blue.png -clone 1 -clone 3 -flatten +write pen.png     ^) ^
+		  null: & ^
+ECHO Stop Measure %Time% >> timer.txt
+======================================================================================================
+
+Power-shell enabled IM command with MPR:
+
+Pen Product:
+=================
+Measure-Command { convert --% -respect-parentheses ( body_mask.png -colorspace RGB -background rgb(255,00,00) -alpha Shape +write mpr:mask1 ) ( base_image.png mpr:mask1 -compose Multiply -composite +write mpr:baseWithMask1  ) ( cover_mask.png -colorspace RGB -background rgb(255,255,00) -alpha Shape +write mpr:mask2  ) ( mpr:baseWithMask1 mpr:mask2 -compose Multiply -composite +write mpr:baseWithMask2  ) ( mpr:baseWithMask2 black.png -flatten +write pen.png ) null: }
+
+Power-shell enabled IM command with Clone:
+
+Pen Product:
+=================
+Measure-Command {  convert --% -respect-parentheses ( body_mask.tif -colorspace RGB -background #cccccc -alpha Shape  ) ( base_image.tif -clone 0 -compose Multiply -composite ) ( cover_mask.tif -colorspace RGB -background #3c3c3c -alpha Shape ) ( -clone 1 -clone 2 -compose Multiply -composite ) ( -clone 3 black.tif -flatten +write pen.jpg ) null: }
+
+Shirt Product:
+=================
+Measure-Command { convert --% -respect-parentheses ( shirt_mask.tif -colorspace RGB -background #ff0000 -alpha Shape  ) ( shirt_base.tif -clone 0 -compose Multiply -composite ) ( -clone 1 -flatten +write shirt.jpg ) null: }

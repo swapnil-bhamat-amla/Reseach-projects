@@ -1,0 +1,154 @@
+https://docs.google.com/spreadsheets/d/1cPaWZcvO8VIzcIle3hy-CXuFgcycFQ8opGQZ3fap_c8/edit#gid=1447309148
+
+Existing Commands:
+
+EffectsRemoveAll	- Done
+convert source.jpg -alpha set -channel RGBA -fill none -fuzz 80% -opaque white png32:target.png
+
+MasterLockPng / Wristband - Done
+convert source.jpg -alpha set -channel RGBA -fill none -fuzz 10% -opaque white png32:target.png
+
+convert seven.png -fuzz 80% -opaque white -transparent white output.png
+
+25% gain
+
+***************************************************************************************************
+
+EffectsRemoveBackground	- Done
+convert source.jpg -bordercolor "#ffffff" -border 1x1 -alpha set -fuzz 80% -fill none -floodfill +0+0 "#ffffff" -shave 1x1 png32:target.png
+
+convert source.jpg -bordercolor white -border 1x1 -fuzz 80% -fill none -floodfill +0+0 white -shave 1x1 target.png;
+
+17% gain
+
+***************************************************************************************************
+
+EffectsBlackAndWhite - Done
+convert source.jpg -negate -threshold 89% -negate png32:target.png
+
+convert seven.png -colorspace gray -negate -threshold 89% -negate output.png
+
+ 36.09% gain
+
+***************************************************************************************************
+
+EffectsTint	    - Done
+convert source.jpg +level-colors red PNG32:target.png
+
+convert source.jpg +level-colors red target.png
+
+53% gain
+****************************************************************************************************
+
+EffectsEmboss	- Done
+convert source.jpg ( -clone 0 -background black -shadow 80x2+10+10 ) ( -clone 0 -background rgb(251,247,245) -shadow 80x1-10-10 ) -reverse -background none -layers merge +repage target.png
+
+EffectsDeboss - Done
+convert source.jpg ( -clone 0 -background black -shadow 80x2+10+10 ) ( -clone 0 -background rgb(197,77,75) -shadow 80x1-10-10 ) -reverse -background none -layers merge +repage target.png 
+
+
+convert font.png ( -clone 0 -background black -shadow 80x2+10+10 ) ( -clone 0 -background rgb(251,247,245) -shadow 80x1-10-10 ) ( -reverse -background none -layers merge +write emboss_new7.png ) null:
+
+7% gain
+****************************************************************************************************
+
+ResizeImage - Done
+convert source.jpg -resize 1024 target.png
+
+gm convert -scale 1024 two.png -profile AdobeRGB1998.icc -quality 20 two.png
+
+68.91% gain 
+****************************************************************************************************
+
+ImageMagicIsTransparentImage - Done
+
+identify -format %[opaque],%A target.jpg
+
+0% gain
+****************************************************************************************************
+ImageFillColor - Done
+
+convert source.jpg -fill blue -opaque black target.png
+
+gm convert seven.png -fill blue -opaque white -quality 20 -format png target.png
+
+53.39356782% gain 
+****************************************************************************************************
+TextFillColor - Done
+convert source.jpg -fuzz 100% -fill blue -opaque white target.png
+
+convert seven.png -fuzz 100% -fill blue -opaque white -quality 20 -format png target.png
+
+11% loss
+****************************************************************************************************
+EmbroideryInnerShadow - Done
+
+convert source.jpg ( -clone 0 -alpha extract ) ( -clone 1 -blur 0x4 -level 20x100% ) +swap -alpha on -compose multiply -composite target.png
+
+convert source.jpg ( -clone 0 -alpha extract ) ( -clone 1 -blur 0x4 -level 20x100% ) +swap -alpha on -compose multiply -quality 20 -composite target.png
+
+28% gain
+****************************************************************************************************
+EffectEmbroidery - Done
+convert source.jpg ( +clone pattern.png -alpha off -compose Multiply -composite ) -compose In -composite target.png
+
+convert source.jpg ( +clone pattern.png -alpha off -compose Multiply -composite ) -compose In -quality 20 -composite target.png
+
+57.8005788 gain
+****************************************************************************************************
+TextureEffect - Done
+convert -compose Dst_In -gravity center source.jpg source1.jpg -alpha Set target.png
+
+convert -compose Dst_In -gravity center source.jpg source1.jpg -alpha Set -quality 20 target.png
+
+50.05978818 gain
+****************************************************************************************************
+TextureTrimEffect - Done
+convert source.jpg -trim target.png
+
+convert source.jpg -trim -quality 20 target.png
+
+53.73398517 gain
+
+****************************************************************************************************
+EffectsEmbossText - Done
+convert source.jpg ( -clone 0 -background black -shadow 50x1-2-1 ) ( -clone 0 -background red -shadow 30x1-2-1 ) -reverse -background none -layers merge +repage target.png 
+
+EffectsDebossText - Done
+convert source.jpg ( -clone 0 -background black -shadow 50x1+2+1 ) ( -clone 0 -background red -shadow 30x1-2-1 ) -reverse -background none -layers merge +repage target.png 
+
+convert font.png ( -clone 0 -background black -shadow 50x1+2+1 ) ( -clone 0 -background red -shadow 30x1-2-1 ) -reverse -background none -layers merge -quality 20 +repage emboss_new7.png
+
+****************************************************************************************************
+
+EffectsTintWithColorWheel - Done
+gm convert source.jpg -modulate 100,100,255 target.png
+
+gm convert source.jpg -modulate 100,100,255 -quality 20 target.png
+
+64.75707034% gain
+
+****************************************************************************************************
+
+EffectsGrayscale - Done
+convert source.jpg -colorspace gray target.png
+
+gm convert seven.png -type Grayscale -depth 8 -quality 20 target.png
+
+========================================================================================================================================
+MasterLockBmp
+
+{0} -resize {1}x{2} -size {1}x{2} -quality 100 xc:white +swap -gravity center -composite -units PixelsPerInch -density {3} -quality 100 -set colorspace RGB -colorspace gray  {4}
+
+Optimized:
+convert big_earth.png -resize 6024x6024 -set colorspace RGB -colorspace gray  png32:new_big.png
+convert big_earth.png -resize 6024x6024 -colorspace gray  png32:new_big.png
+========================================================================================================================================
+========================================================================================================================================
+MasterLockPngNoTransparent
+
+{0} -resize {1}x{2} -size {1}x{2} -quality 100 xc:none +swap -gravity center -composite -units PixelsPerInch -density {3} -quality 100 -set colorspace RGB -colorspace gray  png32:{4}
+
+Optimized: convert big_earth.png -resize 6024x6024 -set colorspace RGB -colorspace gray  png32:new_big.png
+convert big_earth.png -resize 6024x6024 -colorspace gray  png32:new_big.png
+========================================================================================================================================

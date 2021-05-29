@@ -1,0 +1,16 @@
+<div #clipParentDiv style="max-height:300px;overflow:auto">
+    <div infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()" class="art-grid-thumb col-xs-12 no-padding clipart-scroll">
+
+        <div *ngFor="let si of clipartImgs" [ngClass]=" si.Id == activeClipart ? 'selected' : ''" class="col-xs-3 text-center no-padding art-frame-thumb-container float-left border m-3 p-2 rounded ">
+            <div class="art-frame-thumb  " title="si.ImageName">
+                <img class="dragImg img-responsive lazy" (click)="imgClickEventHandle(si)" [src]="settings.clipartThumbPath+si.UniqueName+si.Extension" standard-width="0" standard-height="0">
+            </div>
+            <div class="art-caption is_truncate" [attr.title]="si.ImageName">{{ si.ImageName }}</div>
+        </div>
+
+        <div *ngIf="showLoader" class="col-md-12 text-center">
+            <img style="width:50px" [src]='loader' />
+        </div>
+
+    </div>
+</div>
